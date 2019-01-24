@@ -7,9 +7,9 @@ Football Application from TheSportsDb API
 
 Application created Kotlin with Anko Layout
 
-</br>
 <h2>Application Features:</h2>
-> Match schedule by league
+<ol>
+  <li>Match schedule by league</li>
   - Next event
   - Past event
   - Detail event
@@ -17,13 +17,15 @@ Application created Kotlin with Anko Layout
   - Add event to favorite
   - Reminder for coming event
   
-> Team by league
+<li>Team by league</li>
   - List of team use recycler view
   - Add team to favorite
   - Detail team and list of players
   - Detail player
   - Search event with SearchView
  
-> Favorite
+<li>Favorite</li>
   - Favorite events
   - Favorite teams
+  
+</ol>
