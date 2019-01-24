@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- MainActivityUI -->
+    <item name="vp_main" type="id"/>
+    <item name="nv_main" type="id"/>
+    <item name="pb_main" type="id"/>
+    <item name="bt_matches" type="id"/>
+    <item name="bt_teams" type="id"/>
+    <item name="bt_favorite" type="id"/>
+
+    <!-- MatchesFragmentUI -->
+    <item name="ab_matches" type="id"/>
+    <item name="tl_matches" type="id"/>
+    <item name="sp_league" type="id"/>
+    <item name="rv_events" type="id"/>
+    <item name="pb_matches" type="id"/>
+
+    <!-- EventItemUI -->
+    <item name="tv_event_date" type="id"/>
+    <item name="tv_home_name" type="id"/>
+    <item name="tv_home_score" type="id"/>
+    <item name="tv_away_name" type="id"/>
+    <item name="tv_away_score" type="id"/>
+
+    <!-- Teams Fragment -->
+    <item name="sp_league_teams" type="id"/>
+    <item name="rv_teams" type="id"/>
+    <item name="pb_teams" type="id"/>
+
+    <!-- TeamItemUI -->
+    <item name="tv_team_name" type="id"/>
+    <item name="iv_team_badge" type="id"/>
+
+    <!-- FavoriteFragmentUI -->
+    <item name="tl_favorites" type="id"/>
+    <item name="ab_favorites" type="id"/>
+    <item name="pb_favorites" type="id"/>
+
+    <!-- PlayerItemUI -->
+    <item name="iv_item_thumb" type="id" />
+    <item name="tv_item_player" type="id" />
+    <item name="tv_item_position" type="id" />
+
+    <!-- PlayerActivityUI -->
+    <item name="iv_team_badge_detail" type="id" />
+    <item name="sv_team_overview" type="id"/>
+    <item name="sv_team_players" type="id"/>
+    <item name="pb_team" type="id" />
+    <item name="ll_team_detail" type="id" />
+    <item name="ab_team" type="id" />
+    <item name="tl_team" type="id" />
+    <item name="tv_team" type="id" />
+    <item name="tv_formed_year" type="id" />
+    <item name="tv_stadium" type="id" />
+    <item name="tv_description_en" type="id" />
+    <item name="rv_players" type="id" />
+
+    <!-- EventActivityUI -->
+    <item name="sv_detail" type="id"/>
+    <item name="pb_detail" type="id"/>
+    <item name="ll_detail_team_badge" type="id"/>
+    <item name="ll_detail_team_name" type="id"/>
+
+    <item name="ll_detail_score" type="id"/>
+    <item name="tv_detail_event_date" type="id"/>
+    <item name="tv_detail_home_score" type="id"/>
+    <item name="tv_detail_away_score" type="id"/>
+    <item name="tv_detail_home_team" type="id"/>
+    <item name="tv_detail_away_team" type="id"/>
+    <item name="tv_detail_home_badge" type="id"/>
+    <item name="tv_detail_away_badge" type="id"/>
+    <item name="tv_detail_home_formation" type="id"/>
+    <item name="tv_detail_away_formation" type="id"/>
+    <item name="tv_detail_home_red_cards" type="id"/>
+    <item name="tv_detail_away_red_cards" type="id"/>
+    <item name="tv_detail_home_yellow_cards" type="id"/>
+    <item name="tv_detail_away_yellow_cards" type="id"/>
+    <item name="tv_detail_home_goal_details" type="id"/>
+    <item name="tv_detail_away_goal_details" type="id"/>
+    <item name="tv_detail_home_shots" type="id"/>
+    <item name="tv_detail_away_shots" type="id"/>
+    <item name="tv_detail_home_lineup_goal_keeper" type="id"/>
+    <item name="tv_detail_away_lineup_goal_keeper" type="id"/>
+    <item name="tv_detail_home_lineup_defense" type="id"/>
+    <item name="tv_detail_away_lineup_defense" type="id"/>
+    <item name="tv_detail_home_lineup_midfield" type="id"/>
+    <item name="tv_detail_away_lineup_midfield" type="id"/>
+    <item name="tv_detail_home_lineup_forward" type="id"/>
+    <item name="tv_detail_away_lineup_forward" type="id"/>
+    <item name="tv_detail_home_lineup_substitutes" type="id"/>
+    <item name="tv_detail_away_lineup_substitutes" type="id"/>
+
+    <!-- PlayerActivityUI -->
+    <item name="iv_player_fanart" type="id"/>
+    <item name="tv_player_weight" type="id"/>
+    <item name="tv_player_height" type="id"/>
+    <item name="ll_properties_label" type="id"/>
+    <item name="ll_properties_data" type="id"/>
+    <item name="tv_player_position" type="id"/>
+    <item name="pb_player_detail" type="id"/>
+    <item name="sv_player_detail" type="id"/>
+    <item name="ll_player_position" type="id"/>
+    <item name="tv_player_description" type="id"/>
+    <item name="mi_favorite_team" type="id"/>
+    <item name="rv_favorite_event" type="id"/>
+    <item name="rv_favorite_team" type="id"/>
+    <item name="tv_event_time" type="id"/>
+    <item name="tv_detail_event_time" type="id"/>
+    <item name="pb_search" type="id"/>
+    <item name="rv_search" type="id"/>
+    <item name="group_with_favorite" type="id"/>
+    <item name="ll_event_item_center" type="id"/>
+    <item name="bt_add_to_calendar" type="id"/>
+
+</resources>

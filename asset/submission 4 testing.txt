@@ -1,0 +1,165 @@
+Unit Testing
+Tujuan: Unit testing pada fungsi dateIsoToLong, fungsi dateIsoToLong berguna untuk mengubah ISO formatted date menjadi Long formatted date
+----------------------------------------------------
+class: Date
+function: dateIsoToLong
+----------------------------------------------------
+langkah kerja: 
+- Tekan Command + SHIFT + T pada fungsi dateIsoToLong (pada os windows menggunakan CTRL + SHIFT + T)
+- Pilih create new test...
+  > Pilih Testing library JUnit 4
+  > Class name: DateTest
+  > Destination package: id.lilule.footballmatchschedule.util
+  > Pada member centang fungsi dateIsoToLong
+  > Tekan OK
+- Pilih Destination Directory 
+  > pilih test folder pada .../app/src/test/java/id/lilule/footballmatchscedule/util
+  > Tekan OK
+  > sync gradle apabila diperlukan
+- Pada Editor akan muncul directory baru yaitu util pada folder id.lilule.footballmatchschedule (test)
+- Pada directory telah terbuat 1 file baru dengan nama DateTest.kt yang berisi class DateTest
+- Tambahkan kode pada function posTestDateIsoToLong()
+    val isoDate = "2019-01-16"
+    assertEquals("Wed, Jan 16, 2019", dateIsoToLong(isoDate))
+-  Tambahkan kode pada function posTestDateIsoToLong()
+    val isoDate = ""
+    assertEquals("", dateIsoToLong(isoDate))
+- Klik kanan pada DateTest, lalu pilih Run DateTest
+- Lihat hasilnya pada windows Run
+----------------------------------------------------
+Scenario #1 - Positive Test
+Test ini menguji apakah hasil yang diberikan sesuai dengan yang diharapkan
+Test function: posTestDateIsoToLong
+Parameter :
+  isoDate = "2019-01-16"
+  assertEquals = "Wed, Jan 16, 2019", dateIsoToLong(isoDate))
+Expected: Wed, Jan 16, 2019
+Result: Tests passed
+----------------------------------------------------
+Scenario #2 - Negative Test empty
+Test ini menguji apakah fungsi meng-handle empty string, apabila parameter yang dimasukkan salah diharapkan memberikan nilai balik kosong
+Test function: emptyTestDateIsoToLong
+Parameter :
+  isoDate = ""
+  assertEquals = "", dateIsoToLong(isoDate))
+Expected: ""
+Result: Tests passed
+---------------------------------------------------
+Scenario #2 - Negative Test out of bound
+Test ini menguji apakah fungsi meng-handle tanggal yang out of bound, apabila parameter yang dimasukkan salah diharapkan memberikan nilai balik kosong
+Test function: outTestDateIsoToLong
+Parameter :
+  isoDate = "2019-99-99"
+  assertEquals = "", dateIsoToLong(isoDate))
+Expected: ""
+Result: Tests passed
+---------------------------------------------------
+Scenario #2 - Negative Test wrong format
+Test ini menguji apakah fungsi meng-handle format tanggal yang salah, apabila parameter yang dimasukkan salah diharapkan memberikan nilai balik kosong
+Test function: wrongTestDateIsoToLong
+Parameter :
+  isoDate = "xxx"
+  assertEquals = "", dateIsoToLong(isoDate))
+Expected: ""
+Result: Tests passed
+---------------------------------------------------
+
+Unit Testing Menggunakan JUnit dan Mockito
+Tujuan: Unit testing pada fungsi doRequest, fungsi doRequest berguna untuk melakukan request API 
+----------------------------------------------------
+class: DetailPresenter
+function: getTeamDetails
+----------------------------------------------------
+langkah kerja: 
+- Tekan Command + SHIFT + T pada fungsi getTeamDetails (pada os windows menggunakan CTRL + SHIFT + T)
+- Pilih create new test...
+  > Pilih Testing library JUnit 4
+  > Class name: DetailPresenterTest
+  > Destination package: id.lilule.footballmatchschedule.presenter
+  > Pada member centang fungsi getTeamDetails
+  > Tekan OK
+- Pilih Destination Directory 
+  > pilih test folder pada .../app/src/test/java/id/lilule/footballmatchscedule/presenter
+  > Tekan OK
+  > sync gradle apabila diperlukan
+- Pada directory telah terbuat 1 file baru dengan nama EventPresenter.kt yang berisi class DetailPresenterTest
+- Tambahkan implementasi mockito pada dependencies pada gradle (Module:app)
+    testImplementation "org.mockito:mockito-core:$mockito_version"
+    testImplementation "org.mockito:mockito-inline:$mockito_version"
+- Definisikan variable presenter extends DetailPresenter
+    private lateinit var presenter: DetailPresenter
+- Mock DetailView, ApiRepository dan Gson
+    @Mock
+    private lateinit var view: DetailView
+    @Mock
+    lateinit var apiRepository: ApiRepository
+    @Mock
+    private lateinit var gson: Gson
+- Setup @Before
+    @Before
+    fun setUp() {
+        MockitoAnnotations.initMocks(this)
+        presenter = DetailPresenter(view, apiRepository, gson, TestContextProvider())
+    }
+- Buat class CoroutineContextProvider dan TestContextProvider pada folder util
+- Tambahkan variable context pada class DetailPresenter
+    private val context: CoroutineContextProvider = CoroutineContextProvider()
+- Pada getTeamDetails() function di dalam class DetailPresenterTest setting test function-nya
+- Klik kanan pada DateTest, lalu pilih Run DetailPresenterTest
+- Lihat hasilnya pada windows Run
+----------------------------------------------------
+Scenario 1 - Positive Test
+Test ini menguji apakah hasil yang diberikan sesuai dengan yang diharapkan
+Test function: posTestGetTeamDetails
+Parameter :
+  id = "133604"
+Expected: Tests passed
+Result: Tests passed
+----------------------------------------------------
+
+Instrumentation Testing RecyclerView
+Tujuan: Menguji behaviour RecyclerView ketika pengguna berinteraksi dengan UI
+----------------------------------------------------
+activity: MainActivity
+component: RecyclerView
+function: testRecyclerViewBehaviour
+----------------------------------------------------
+Scenario:
+- check: RecyclerView Component tampil
+- simulasi scrol hingga ke posisi 10
+- simulasi klik di item 10
+Expected: View sesuai yang diharapkan dan berakhir dengan tampilnya halaman detail
+Result: Test passed
+
+Instrumentation Testing BottomNavigationView
+Tujuan: Menguji behaviour BottomNavigationView ketika pengguna berinteraksi dengan UI
+----------------------------------------------------
+activity: MainActivity
+component: BottomNavigationView
+function: testBottomNavigationViewBehaviour
+----------------------------------------------------
+Scenario:
+- check: BottomNavigationView Component tampil
+- simulasi klik MenuItem Past Event
+- simulasi klik MenuItem Next Event
+- simulasi klik MenuItem Favorite
+Expected: View sesuai yang diharapkan
+Result: Test passed
+
+Instrumentation Testing Add Favorit
+Tujuan: Menguji behaviour App ketika pengguna menambahkan favorite
+----------------------------------------------------
+activity: MainActivity
+component: App - Spinner, RecyclerView, BottomNavigationView
+function: testAddEventToFavoriteBehaviour
+----------------------------------------------------
+Scenario:
+- check: SpinnerLayout Component tampil
+- simulasi klik Spinner
+- simulasi klik SpinnerItem dengan text "Spanish La Liga"
+- check: RecyclerView dengan text Sociedad tampil
+- simulasi klik RecyclerView Item dengan label Sociedad
+- check: BottomNavigationView Component tampil
+- simulasi klik BottomNavigationView menu Favorite
+Expected: View sesuai yang diharapkan, Event Sociedad vs Espanol ada di pada daftar favorite
+Result: Test passed
