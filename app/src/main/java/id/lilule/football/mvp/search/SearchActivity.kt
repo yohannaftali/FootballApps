@@ -3,14 +3,13 @@ package id.lilule.football.mvp.search
 import android.app.SearchManager
 import android.content.Context
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
-import androidx.appcompat.widget.SearchView
 import android.text.TextUtils
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ProgressBar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import com.google.gson.Gson
 import id.lilule.football.R
 import id.lilule.football.api.ApiRepository

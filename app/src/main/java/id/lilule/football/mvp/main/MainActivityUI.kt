@@ -1,8 +1,8 @@
 package id.lilule.football.mvp.main
 
+import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout.LayoutParams.PARENT_ID
 import androidx.core.content.ContextCompat
-import android.view.View
 import id.lilule.football.R
 import org.jetbrains.anko.*
 import org.jetbrains.anko.constraint.layout.constraintLayout

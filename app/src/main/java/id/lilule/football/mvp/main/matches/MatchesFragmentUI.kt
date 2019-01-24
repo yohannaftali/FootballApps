@@ -1,11 +1,9 @@
 package id.lilule.football.mvp.main.matches
 
-import androidx.constraintlayout.widget.ConstraintLayout.LayoutParams.PARENT_ID
-import com.google.android.material.tabs.TabLayout
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.Gravity
 import android.view.View
+import androidx.constraintlayout.widget.ConstraintLayout.LayoutParams.PARENT_ID
+import com.google.android.material.tabs.TabLayout
 import id.lilule.football.R
 import org.jetbrains.anko.*
 import org.jetbrains.anko.constraint.layout.constraintLayout

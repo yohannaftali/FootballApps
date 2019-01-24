@@ -1,8 +1,6 @@
 package id.lilule.football.mvp.main.teams
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -53,9 +51,7 @@ class TeamsFragment : androidx.fragment.app.Fragment(), TeamsView {
     private fun setupRecyclerView() {
         teamAdapter = TeamAdapter(teamList)
         val rvTeams: androidx.recyclerview.widget.RecyclerView? = find(ui.rvTeams)
-        if (rvTeams != null) {
-            rvTeams.adapter = teamAdapter
-        }
+        rvTeams?.adapter = teamAdapter
     }
 
     private fun setupSpinner() {
@@ -97,14 +93,12 @@ class TeamsFragment : androidx.fragment.app.Fragment(), TeamsView {
     }
 
     override fun showLoading() {
-        val progressBar:ProgressBar? = find(ui.pbTeams)
-        progressBar!!.visibility = View.VISIBLE
+        val progressBar: ProgressBar? = find(ui.pbTeams)
+        progressBar?.visibility = View.VISIBLE
     }
 
     override fun hideLoading() {
-      //  if(presenter != null) {
-            val progressBar: ProgressBar? = find(ui.pbTeams)
-            progressBar!!.visibility = View.GONE
-       // }
+        val progressBar: ProgressBar? = find(ui.pbTeams)
+        progressBar?.visibility = View.GONE
     }
 }

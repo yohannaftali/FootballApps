@@ -1,7 +1,6 @@
 package id.lilule.football.mvp.team
 
 import android.content.Intent
-import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView

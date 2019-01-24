@@ -2,14 +2,14 @@ package id.lilule.football.mvp.event
 
 import android.database.sqlite.SQLiteConstraintException
 import android.os.Bundle
-import androidx.core.content.ContextCompat
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import id.lilule.football.R
@@ -97,12 +97,12 @@ class EventActivity : AppCompatActivity(), EventView {
     }
 
     override fun setFavorite(isFavorite: Boolean) {
-        this.isFavorite = isFavorite
-        if (this.isFavorite) {
+        if (isFavorite) {
             miFavorite?.icon = ContextCompat.getDrawable(this, R.drawable.ic_star)
         } else {
             miFavorite?.icon = ContextCompat.getDrawable(this, R.drawable.ic_star_border)
         }
+        this.isFavorite = isFavorite
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {

@@ -1,16 +1,15 @@
 package id.lilule.football.mvp.team
 
 import android.graphics.Typeface
-import androidx.constraintlayout.widget.ConstraintLayout.LayoutParams.PARENT_ID
-import com.google.android.material.tabs.TabLayout
-import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.Gravity
 import android.view.View
 import android.view.ViewManager
 import android.widget.LinearLayout
 import android.widget.ScrollView
+import androidx.constraintlayout.widget.ConstraintLayout.LayoutParams.PARENT_ID
+import androidx.core.content.ContextCompat
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayout.GRAVITY_CENTER
 import id.lilule.football.R
 import org.jetbrains.anko.*
 import org.jetbrains.anko.constraint.layout.constraintLayout
@@ -52,7 +51,7 @@ class TeamActivityUI : AnkoComponent<TeamActivity> {
                     id = tlTeam
                     lparams(width = matchParent, height = wrapContent)
                     {
-                        tabGravity = Gravity.CENTER
+                        tabGravity = GRAVITY_CENTER
                         tabMode = TabLayout.MODE_FIXED
                     }
                 }

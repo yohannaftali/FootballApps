@@ -1,10 +1,10 @@
 package id.lilule.football.mvp.item
 
-import androidx.core.content.ContextCompat
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.core.content.ContextCompat
 import id.lilule.football.R
 import org.jetbrains.anko.*
 import org.jetbrains.anko.cardview.v7.cardView

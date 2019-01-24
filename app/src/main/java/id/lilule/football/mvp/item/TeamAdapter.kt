@@ -1,6 +1,5 @@
 package id.lilule.football.mvp.item
 
-import androidx.recyclerview.widget.RecyclerView
 import android.view.ViewGroup
 import id.lilule.football.mvp.model.Team
 import org.jetbrains.anko.AnkoContext

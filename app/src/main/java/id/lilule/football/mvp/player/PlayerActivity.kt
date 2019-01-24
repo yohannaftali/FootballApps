@@ -1,10 +1,10 @@
 package id.lilule.football.mvp.player
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.squareup.picasso.Picasso
 import id.lilule.football.R
 import id.lilule.football.mvp.model.Player

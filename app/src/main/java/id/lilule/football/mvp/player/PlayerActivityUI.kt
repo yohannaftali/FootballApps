@@ -1,13 +1,13 @@
 package id.lilule.football.mvp.player
 
-import androidx.constraintlayout.widget.ConstraintLayout.LayoutParams.PARENT_ID
-import androidx.core.content.ContextCompat
 import android.view.Gravity
 import android.view.View
 import android.view.ViewManager
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ScrollView
+import androidx.constraintlayout.widget.ConstraintLayout.LayoutParams.PARENT_ID
+import androidx.core.content.ContextCompat
 import id.lilule.football.R
 import org.jetbrains.anko.*
 import org.jetbrains.anko.constraint.layout.constraintLayout
@@ -92,10 +92,10 @@ class PlayerActivityUI : AnkoComponent<PlayerActivity> {
     }
 
     private fun ViewManager.textPropertiesLabel(idLinearLayout: Int): LinearLayout {
-        return linearLayout() {
+        return linearLayout {
             id = idLinearLayout
             orientation = LinearLayout.HORIZONTAL
-            textView() {
+            textView {
                 text = context.getString(R.string.weight_kg)
                 textSize = 14f
                 textColor = ContextCompat.getColor(context, R.color.colorLightGrey)
@@ -120,7 +120,7 @@ class PlayerActivityUI : AnkoComponent<PlayerActivity> {
         return linearLayout {
             id = idLinearLayout
             orientation = LinearLayout.HORIZONTAL
-            textView() {
+            textView {
                 id = tvPlayerWeight
                 text = context.getString(R.string.weight_kg)
                 textSize = 32f
@@ -144,7 +144,7 @@ class PlayerActivityUI : AnkoComponent<PlayerActivity> {
     }
 
     private fun ViewManager.textPlayerPosition(idLinearLayout: Int): LinearLayout {
-        return linearLayout() {
+        return linearLayout {
             id = idLinearLayout
             orientation = LinearLayout.VERTICAL
             textView {

@@ -1,8 +1,6 @@
 package id.lilule.football.mvp.item
 
 import android.graphics.Typeface
-import androidx.constraintlayout.widget.ConstraintLayout.LayoutParams.PARENT_ID
-import androidx.core.content.ContextCompat
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +8,8 @@ import android.view.ViewManager
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout.LayoutParams.PARENT_ID
+import androidx.core.content.ContextCompat
 import id.lilule.football.R
 import org.jetbrains.anko.*
 import org.jetbrains.anko.cardview.v7.cardView

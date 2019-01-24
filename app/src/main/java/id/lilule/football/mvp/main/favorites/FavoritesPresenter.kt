@@ -2,8 +2,6 @@ package id.lilule.football.mvp.main.favorites
 
 import android.content.Context
 import android.database.sqlite.SQLiteConstraintException
-import com.google.gson.Gson
-import id.lilule.football.api.ApiRepository
 import id.lilule.football.database.database
 import id.lilule.football.mvp.model.Event
 import id.lilule.football.mvp.model.Team
@@ -12,14 +10,11 @@ import id.lilule.football.util.Constants.TABLE_FAVORITE_TEAMS
 import org.jetbrains.anko.db.classParser
 import org.jetbrains.anko.db.select
 
-class FavoritesPresenter(
-    private val view: FavoritesView,
-    private val apiRepository: ApiRepository,
-    private val gson: Gson
-) {
+
+class FavoritesPresenter(private val view: FavoritesView) {
 
     fun getFavoriteEvents(context: Context) {
-        view?.showLoading()
+        view.showLoading()
         val data: MutableList<Event> = mutableListOf()
         try {
             context.database.use {
@@ -28,16 +23,16 @@ class FavoritesPresenter(
                 val queryParsed = queryResult.parseList(rowParser)
                 data.addAll(queryParsed)
             }
-            view?.hideLoading()
-            view?.showFavoriteEvents(data)
+            view.hideLoading()
+            view.showFavoriteEvents(data)
         } catch (e: SQLiteConstraintException) {
-            view?.hideLoading()
-            view?.showErrorDatabase(e)
+            view.hideLoading()
+            view.showErrorDatabase(e)
         }
     }
 
     fun getFavoriteTeams(context: Context) {
-        view?.showLoading()
+        view.showLoading()
         val data: MutableList<Team> = mutableListOf()
         try {
             context.database.use {
@@ -46,11 +41,11 @@ class FavoritesPresenter(
                 val queryParsed = queryResult.parseList(rowParser)
                 data.addAll(queryParsed)
             }
-            view?.hideLoading()
-            view?.showFavoriteTeams(data)
+            view.hideLoading()
+            view.showFavoriteTeams(data)
         } catch (e: SQLiteConstraintException) {
-            view?.hideLoading()
-            view?.showErrorDatabase(e)
+            view.hideLoading()
+            view.showErrorDatabase(e)
         }
     }
 }

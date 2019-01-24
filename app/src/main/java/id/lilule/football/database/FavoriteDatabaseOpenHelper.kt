@@ -42,7 +42,6 @@ class DatabaseOpenHelper(context: Context) : ManagedSQLiteOpenHelper(context, DA
             Event.STR_DATE to TEXT,
             Event.STR_TIME to TEXT,
 
-            // home team
             Event.ID_HOME_TEAM to TEXT,
             Event.STR_HOME_TEAM to TEXT,
             Event.INT_HOME_SCORE to TEXT,
@@ -58,7 +57,6 @@ class DatabaseOpenHelper(context: Context) : ManagedSQLiteOpenHelper(context, DA
             Event.STR_HOME_LINEUP_FORWARD to TEXT,
             Event.STR_HOME_LINEUP_SUBSTITUTES to TEXT,
 
-            // away team
             Event.ID_AWAY_TEAM to TEXT,
             Event.STR_AWAY_TEAM to TEXT,
             Event.INT_AWAY_SCORE to TEXT,
@@ -98,6 +96,5 @@ class DatabaseOpenHelper(context: Context) : ManagedSQLiteOpenHelper(context, DA
     }
 }
 
-// Access property for Context
 val Context.database: DatabaseOpenHelper
     get() = DatabaseOpenHelper.getInstance(applicationContext)

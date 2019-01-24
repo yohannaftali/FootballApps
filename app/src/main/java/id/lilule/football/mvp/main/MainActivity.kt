@@ -2,11 +2,10 @@ package id.lilule.football.mvp.main
 
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.viewpager.widget.ViewPager
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import id.lilule.football.R
 import id.lilule.football.mvp.main.favorites.FavoritesFragment
 import id.lilule.football.mvp.main.matches.MatchesFragment
@@ -55,7 +54,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupViewPager() {
-        if(viewPager?.adapter == null) {
+        if (viewPager?.adapter == null) {
             val adapter = MainFragmentPagerAdapter(supportFragmentManager)
             adapter.addFragment(MatchesFragment(), getString(R.string.matches))
             adapter.addFragment(TeamsFragment(), getString(R.string.teams))
@@ -96,11 +95,12 @@ class MainActivity : AppCompatActivity() {
                 else bottomNavigationView?.menu?.getItem(0)?.isChecked = false
                 bottomNavigationView?.menu?.getItem(position)?.isChecked = true
                 prevMenuItem = bottomNavigationView?.menu?.getItem(position)
-                when(position){
+                when (position) {
                     0, 1 -> menu?.setGroupVisible(R.id.group_with_favorite, true)
                     2 -> menu?.setGroupVisible(R.id.group_with_favorite, false)
                 }
             }
+
             override fun onPageScrollStateChanged(state: Int) {}
         })
     }

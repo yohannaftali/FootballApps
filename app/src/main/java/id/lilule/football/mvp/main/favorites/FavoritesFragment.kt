@@ -2,16 +2,12 @@ package id.lilule.football.mvp.main.favorites
 
 import android.database.sqlite.SQLiteConstraintException
 import android.os.Bundle
-import com.google.android.material.tabs.TabLayout
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
-import com.google.gson.Gson
+import com.google.android.material.tabs.TabLayout
 import id.lilule.football.R
-import id.lilule.football.api.ApiRepository
 import id.lilule.football.mvp.item.EventAdapter
 import id.lilule.football.mvp.item.TeamAdapter
 import id.lilule.football.mvp.model.Event
@@ -37,7 +33,7 @@ class FavoritesFragment : androidx.fragment.app.Fragment(), FavoritesView {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        presenter = FavoritesPresenter(this, ApiRepository(), Gson())
+        presenter = FavoritesPresenter(this)
         tlFavorites = find(ui.tlFavorites)
         setupRecyclerView()
         setupTabLayout()
@@ -62,6 +58,7 @@ class FavoritesFragment : androidx.fragment.app.Fragment(), FavoritesView {
                 override fun onTabSelected(tab: TabLayout.Tab) {
                     loadData()
                 }
+
                 override fun onTabUnselected(tab: TabLayout.Tab) {}
                 override fun onTabReselected(tab: TabLayout.Tab) {}
             })
@@ -86,14 +83,14 @@ class FavoritesFragment : androidx.fragment.app.Fragment(), FavoritesView {
 
     override fun showFavoriteEvents(data: List<Event>) {
         eventList.clear()
-        if(!data.isNullOrEmpty()) eventList.addAll(data)
+        if (!data.isNullOrEmpty()) eventList.addAll(data)
         eventAdapter?.notifyDataSetChanged()
         showRecyclerViewEvent()
     }
 
     override fun showFavoriteTeams(data: List<Team>) {
         teamList.clear()
-        if(!data.isNullOrEmpty()) teamList.addAll(data)
+        if (!data.isNullOrEmpty()) teamList.addAll(data)
         teamAdapter?.notifyDataSetChanged()
         showRecyclerViewTeam()
     }
@@ -113,12 +110,12 @@ class FavoritesFragment : androidx.fragment.app.Fragment(), FavoritesView {
     }
 
     override fun showLoading() {
-        val progressBar:ProgressBar? = find(ui.pbFavorites)
+        val progressBar: ProgressBar? = find(ui.pbFavorites)
         progressBar?.visibility = View.VISIBLE
     }
 
     override fun hideLoading() {
-        val progressBar:ProgressBar? = find(ui.pbFavorites)
+        val progressBar: ProgressBar? = find(ui.pbFavorites)
         progressBar?.visibility = View.GONE
     }
 

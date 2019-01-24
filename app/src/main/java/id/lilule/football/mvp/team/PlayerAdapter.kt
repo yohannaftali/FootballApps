@@ -1,11 +1,11 @@
 package id.lilule.football.mvp.team
 
-import androidx.recyclerview.widget.RecyclerView
 import android.view.ViewGroup
 import id.lilule.football.mvp.model.Player
 import org.jetbrains.anko.AnkoContext
 
-class PlayerAdapter(private val player: List<Player>) : androidx.recyclerview.widget.RecyclerView.Adapter<PlayerViewHolder>() {
+class PlayerAdapter(private val player: List<Player>) :
+    androidx.recyclerview.widget.RecyclerView.Adapter<PlayerViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlayerViewHolder {
         return PlayerViewHolder(
             PlayerItemUI().createView(

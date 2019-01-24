@@ -16,7 +16,7 @@ class MatchesPresenter(
 ) {
 
     fun getAllLeagues() {
-        view?.showLoading()
+        view.showLoading()
         doAsync {
             val data =
                 gson.fromJson(
@@ -25,18 +25,18 @@ class MatchesPresenter(
                 )
 
             uiThread {
-                view?.hideLoading()
+                view.hideLoading()
                 if (!data.leagues.isNullOrEmpty()) {
                     val soccerLeague = data.leagues.filter { a -> a.strSport == Constants.STR_SPORT_SOCCER }
                     val cleanLeague = soccerLeague.filter { a -> a.strLeague != Constants.STR_LEAGUE_NO_LEAGUE }
-                    view?.showAllLeagues(cleanLeague)
+                    view.showAllLeagues(cleanLeague)
                 }
             }
         }
     }
 
     fun getEventsPastLeague(idLeague: String?) {
-        view?.showLoading()
+        view.showLoading()
         doAsync {
             val data =
                 gson.fromJson(
@@ -45,14 +45,14 @@ class MatchesPresenter(
                 )
 
             uiThread {
-                view?.hideLoading()
-                view?.showEventsPastLeague(data)
+                view.hideLoading()
+                view.showEventsPastLeague(data)
             }
         }
     }
 
     fun getEventsNextLeague(idLeague: String?) {
-        view?.showLoading()
+        view.showLoading()
         doAsync {
             val data =
                 gson.fromJson(
@@ -61,8 +61,8 @@ class MatchesPresenter(
                 )
 
             uiThread {
-                view?.hideLoading()
-                view?.showEventsNextLeague(data)
+                view.hideLoading()
+                view.showEventsNextLeague(data)
             }
         }
     }

@@ -45,12 +45,12 @@ class EventViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickL
         val currentTime = System.currentTimeMillis()
         val time = timeInMillis(event?.dateEvent, event?.strTime)
         val isPastEvent = if (time == null || time < currentTime) {
-                btAddToCalendar.alpha = 0.1f
-                true
-            } else {
-                btAddToCalendar.alpha = 1f
-                false
-            }
+            btAddToCalendar.alpha = 0.1f
+            true
+        } else {
+            btAddToCalendar.alpha = 1f
+            false
+        }
         btAddToCalendar.onClick {
             if (!isPastEvent) {
                 addToCalendar(currentView)

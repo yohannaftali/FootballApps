@@ -5,19 +5,6 @@ import id.lilule.football.BuildConfig
 
 object TheSportsDBApi {
 
-    fun getAllTeams(league: String?): String {
-        return Uri.parse(BuildConfig.BASE_URL)
-            .buildUpon()
-            .appendPath("api")
-            .appendPath("v1")
-            .appendPath("json")
-            .appendPath(BuildConfig.TSDB_API_KEY)
-            .appendPath("search_all_teams.php")
-            .appendQueryParameter("l", league)
-            .build()
-            .toString()
-    }
-
     fun getLookupAllTeamsByLeagueId(id: String?): String {
         return Uri.parse(BuildConfig.BASE_URL)
             .buildUpon()
@@ -27,19 +14,6 @@ object TheSportsDBApi {
             .appendPath(BuildConfig.TSDB_API_KEY)
             .appendPath("lookup_all_teams.php")
             .appendQueryParameter("id", id)
-            .build()
-            .toString()
-    }
-
-    fun getSearchAllTeams(l: String?): String {
-        return Uri.parse(BuildConfig.BASE_URL)
-            .buildUpon()
-            .appendPath("api")
-            .appendPath("v1")
-            .appendPath("json")
-            .appendPath(BuildConfig.TSDB_API_KEY)
-            .appendPath("search_all_teams.php")
-            .appendQueryParameter("l", l)
             .build()
             .toString()
     }
@@ -95,19 +69,6 @@ object TheSportsDBApi {
             .toString()
     }
 
-    fun getLookupEvent(id: String?): String {
-        return Uri.parse(BuildConfig.BASE_URL)
-            .buildUpon()
-            .appendPath("api")
-            .appendPath("v1")
-            .appendPath("json")
-            .appendPath(BuildConfig.TSDB_API_KEY)
-            .appendPath("lookupevent.php")
-            .appendQueryParameter("id", id)
-            .build()
-            .toString()
-    }
-
     fun getSearchEvents(e: String?): String {
         return Uri.parse(BuildConfig.BASE_URL)
             .buildUpon()
@@ -130,19 +91,6 @@ object TheSportsDBApi {
             .appendPath(BuildConfig.TSDB_API_KEY)
             .appendPath("searchteams.php")
             .appendQueryParameter("t", t)
-            .build()
-            .toString()
-    }
-
-    fun getSearchPlayers(p: String?): String {
-        return Uri.parse(BuildConfig.BASE_URL)
-            .buildUpon()
-            .appendPath("api")
-            .appendPath("v1")
-            .appendPath("json")
-            .appendPath(BuildConfig.TSDB_API_KEY)
-            .appendPath("searchplayers.php")
-            .appendQueryParameter("p", p)
             .build()
             .toString()
     }

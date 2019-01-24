@@ -2,10 +2,6 @@ package id.lilule.football.mvp.team
 
 import android.database.sqlite.SQLiteConstraintException
 import android.os.Bundle
-import com.google.android.material.tabs.TabLayout
-import androidx.core.content.ContextCompat
-import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -13,6 +9,9 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.ScrollView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import com.google.android.material.tabs.TabLayout
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import id.lilule.football.R

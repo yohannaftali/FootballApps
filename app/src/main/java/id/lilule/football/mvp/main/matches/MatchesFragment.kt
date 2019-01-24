@@ -2,15 +2,13 @@ package id.lilule.football.mvp.main.matches
 
 import android.database.sqlite.SQLiteConstraintException
 import android.os.Bundle
-import com.google.android.material.tabs.TabLayout
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ProgressBar
 import android.widget.Spinner
+import com.google.android.material.tabs.TabLayout
 import com.google.gson.Gson
 import id.lilule.football.R
 import id.lilule.football.api.ApiRepository
@@ -129,23 +127,19 @@ class MatchesFragment : androidx.fragment.app.Fragment(), MatchesView {
 
     override fun showEventsNextLeague(data: EventResponse) {
         eventList.clear()
-        if (!data.events.isNullOrEmpty()) {
-            eventList.addAll(data.events)
-        }
+        if (!data.events.isNullOrEmpty()) eventList.addAll(data.events)
         eventAdapter?.notifyDataSetChanged()
     }
 
     override fun showLoading() {
-        val progressBar:ProgressBar? = find(ui.pbMatches)
+        val progressBar: ProgressBar? = find(ui.pbMatches)
         progressBar?.visibility = View.VISIBLE
 
     }
 
     override fun hideLoading() {
-      //  if(presenter != null) {
-            val progressBar: ProgressBar? = find(ui.pbMatches)
-            progressBar?.visibility = View.GONE
-      //  }
+        val progressBar: ProgressBar? = find(ui.pbMatches)
+        progressBar?.visibility = View.GONE
     }
 
     override fun showErrorDatabase(e: SQLiteConstraintException) {

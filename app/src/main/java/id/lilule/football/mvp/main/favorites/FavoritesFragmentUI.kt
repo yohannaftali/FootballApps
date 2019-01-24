@@ -1,11 +1,9 @@
 package id.lilule.football.mvp.main.favorites
 
+import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout.LayoutParams.PARENT_ID
 import com.google.android.material.tabs.TabLayout
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
-import android.view.Gravity
-import android.view.View
+import com.google.android.material.tabs.TabLayout.GRAVITY_CENTER
 import id.lilule.football.R
 import org.jetbrains.anko.*
 import org.jetbrains.anko.constraint.layout.constraintLayout
@@ -13,6 +11,7 @@ import org.jetbrains.anko.constraint.layout.matchConstraint
 import org.jetbrains.anko.design.appBarLayout
 import org.jetbrains.anko.design.themedTabLayout
 import org.jetbrains.anko.recyclerview.v7.recyclerView
+
 
 class FavoritesFragmentUI : AnkoComponent<FavoritesFragment> {
 
@@ -32,7 +31,7 @@ class FavoritesFragmentUI : AnkoComponent<FavoritesFragment> {
                     id = tlFavorites
                     lparams(width = matchParent, height = wrapContent)
                     {
-                        tabGravity = Gravity.CENTER
+                        tabGravity = GRAVITY_CENTER
                         tabMode = TabLayout.MODE_FIXED
                     }
                 }

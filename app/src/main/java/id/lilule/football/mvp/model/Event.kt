@@ -16,7 +16,6 @@ data class Event(
     val strDate: String?,
     val strTime: String?,
 
-    // home team
     val idHomeTeam: String?,
     val strHomeTeam: String?,
     val intHomeScore: String?,
@@ -32,7 +31,6 @@ data class Event(
     val strHomeLineupForward: String?,
     val strHomeLineupSubstitutes: String?,
 
-    // away team
     val idAwayTeam: String?,
     val strAwayTeam: String?,
     val intAwayScore: String?,
@@ -60,7 +58,6 @@ data class Event(
         const val STR_DATE: String = "strDate"
         const val STR_TIME: String = "strTime"
 
-        // home team
         const val ID_HOME_TEAM: String = "idHomeTeam"
         const val STR_HOME_TEAM: String = "strHomeTeam"
         const val INT_HOME_SCORE: String = "intHomeScore"
@@ -76,7 +73,6 @@ data class Event(
         const val STR_HOME_LINEUP_FORWARD: String = "strHomeLineupForward"
         const val STR_HOME_LINEUP_SUBSTITUTES: String = "strHomeLineupSubstitutes"
 
-        // away team
         const val ID_AWAY_TEAM: String = "idAwayTeam"
         const val STR_AWAY_TEAM: String = "strAwayTeam"
         const val INT_AWAY_SCORE: String = "intAwayScore"

@@ -31,11 +31,11 @@ object Date {
     fun dateIsoGMTToLong(stringIsoDate: String?, stringGMT: String?): String {
         return if (!stringGMT.isNullOrEmpty()) {
             val timeString = timeWithTimezone(stringGMT)
-            val DateTimeISOGMT = "$stringIsoDate $timeString"
+            val dateTimeISOGMT = "$stringIsoDate $timeString"
             val dateISOGMT = SimpleDateFormat(DATE_ISO_GMT, Locale.getDefault())
             dateISOGMT.isLenient = false
             try {
-                val dateParsed = dateISOGMT.parse(DateTimeISOGMT)
+                val dateParsed = dateISOGMT.parse(dateTimeISOGMT)
                 val dateFormatter = SimpleDateFormat(DATE_FORMAT_LONG, Locale.getDefault())
                 dateFormatter.format(dateParsed)
             } catch (e: ParseException) {
@@ -68,17 +68,16 @@ object Date {
         val dateTimeISOGMT = "$stringIsoDate $timeWithTimeZone"
         val dateISOGMT = SimpleDateFormat(DATE_ISO_GMT, Locale.getDefault())
         dateISOGMT.isLenient = false
-        val result = try {
+        return try {
             val dateParsed = dateISOGMT.parse(dateTimeISOGMT)
             dateParsed.time
         } catch (e: ParseException) {
             null
         }
-        return result
     }
 
     private fun timeWithTimezone(rawTime: String): String {
-        val timeString = rawTime.split("+").get(0)
+        val timeString = rawTime.split("+")[0]
         return "$timeString+00:00"
     }
 }
